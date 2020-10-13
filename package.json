@@ -9,13 +9,15 @@
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
     "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "start": "node server.js"
   },
   "dependencies": {
     "@angular/animations": "5.2.11",
     "@angular/common": "5.2.11",
     "@angular/compiler": "5.2.11",
     "@angular/compiler-cli": "5.2.11",
+    "@angular/core": "5.2.11",
     "@angular/forms": "5.2.11",
     "@angular/http": "5.2.11",
     "@angular/platform-browser": "5.2.11",
@@ -37,5 +39,17 @@
     "zone.js": "0.8.26"
   },
   "devDependencies": {},
-  "description": "An Ionic project"
+  "description": "An Ionic project",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josemevi/ionic-pokedex.git"
+  },
+  "keywords": [
+    "ionic"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/josemevi/ionic-pokedex/issues"
+  }
 }
