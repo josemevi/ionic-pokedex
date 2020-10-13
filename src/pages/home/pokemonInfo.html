@@ -1,0 +1,59 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title style="text-transform: capitalize; text-align: center;">
+            {{name}}
+        </ion-title>
+        <ion-buttons start>
+            <button *ngIf="!fav" ion-button icon-only (click)="add(name)" style="color:green;">
+                <ion-icon name="add-circle"></ion-icon>
+            </button>
+            <button *ngIf="fav" ion-button icon-only (click)="remove(name)" style="color:red;">
+                <ion-icon name="remove-circle"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <p>Normal:</p>
+                <img src={{sprite_f}} alt="No internet">
+                <img src={{sprite_b}} alt="No internet">
+            </ion-col>
+            <ion-col>
+                <p>Shiny:</p>
+                <img src={{sprite_fs}} alt="No internet">
+                <img src={{sprite_bs}} alt="No internet">
+            </ion-col>
+        </ion-row>
+        <h3>Type:</h3>
+        <ion-row>
+            <ion-col *ngFor = "let x of types" style="text-transform: capitalize;">{{x.type.name}}</ion-col>
+        </ion-row>
+        <h3>Stats:</h3>
+        <ion-row>
+            <ion-col>Height: {{height}}m</ion-col>
+            <ion-col>Weight: {{weight}}kg</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Hp: {{stats[5].base_stat}}</ion-col>
+            <ion-col>Attack: {{stats[4].base_stat}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Defense: {{stats[3].base_stat}}</ion-col>
+            <ion-col>Special Attack: {{stats[2].base_stat}}</ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>Special Defense: {{stats[1].base_stat}}</ion-col>
+            <ion-col>Speed: {{stats[0].base_stat}}</ion-col>
+        </ion-row>
+        <h3>Abilities:</h3>
+        <ion-row>
+            <ion-col *ngFor = "let x of abilities" style="text-transform: capitalize;">{{x.ability.name}}</ion-col>
+        </ion-row>
+    </ion-grid>
+    
+ 
+    <button ion-button block (click)="close()" color="danger">Close</button>
+</ion-content>

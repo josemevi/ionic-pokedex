@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+          Poke Site
+        </ion-title>
+    
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+   <ion-list *ngIf="exist">
+      <ion-item *ngFor="let pokemons of items">
+      <button ion-item (click)="searchPokemon(pokemons)" style="text-transform: capitalize;">
+        <ion-icon name="aperture" item-start style="color:salmon;"></ion-icon>
+          {{pokemons}}
+        </button>
+    </ion-item>
+  </ion-list>
+    <h1 align = "center" *ngIf="!exist">You Don't Have Any Favorite Pokemon Yet!</h1>
+    
+    <!--<ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content> loadingSpinner="bubbles" </ion-infinite-scroll-content>
+    </ion-infinite-scroll>-->
+</ion-content>

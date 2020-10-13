@@ -1,0 +1,31 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+          <h1 align = "center">Another Pokemon App</h1>
+        </ion-title>
+    
+    </ion-navbar>
+  </ion-header>
+
+<ion-content padding>
+    <div *ngIf="retry" style="margin: 0 auto;" >
+        <button ion-item (click)="tryAgain()" style="font-size: 30px">
+          <ion-icon name="refresh-circle" item-start style="color:salmon;"></ion-icon>
+          </button>
+        </div>
+   <!--<div style="position: fixed; z-index: 99; top: 70px">
+        <button ion-button class="set" (click)="set()">Set</button>
+        <button ion-button class="get" (click)="get()">Get</button>
+    </div>-->
+    <ion-list>
+        <ion-item *ngFor="let pokemons of items">
+        <button ion-item (click)="searchPokemon(pokemons)" style="text-transform: capitalize;">
+          <ion-icon name="aperture" item-start style="color:salmon;"></ion-icon>
+            {{pokemons}}
+          </button>
+      </ion-item>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+      <ion-infinite-scroll-content> loadingSpinner="bubbles" </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

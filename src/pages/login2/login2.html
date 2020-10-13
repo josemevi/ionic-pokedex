@@ -1,0 +1,37 @@
+<ion-content padding style="top: 10%;">
+  <div *ngIf="!register">    
+    <h1 align = "center">Login</h1>
+    <ion-item>
+        <ion-label color="primary" stacked>Username</ion-label>
+        <ion-input  placeholder="Username" [(ngModel)]="username" (ngModelChange)="clear()" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" stacked>Password</ion-label>
+        <ion-input type="password" placeholder="Password" [(ngModel)]="password" (ngModelChange)="clear()" required></ion-input>
+      </ion-item><br>
+    
+    <button ion-button block (click) = "login()" >Login</button>
+    <button ion-button block (click) = "registrar()" color="danger">Register</button><br><br>
+    <h5 align = "center" style="color:red;" *ngIf="pass">Invalid Password</h5>
+    <h5 align = "center" style="color:red;" *ngIf="user">The Username Provided dosn't Exist</h5>
+    
+    <!--<button ion-button block (click) = "clear()" color="danger">Destroy All Data</button>-->
+  </div>
+  <div *ngIf="register">
+    <h1 align = "center">Register</h1>
+      <ion-item>
+          <ion-label color="primary" stacked>Username</ion-label>
+          <ion-input  placeholder="Username" [(ngModel)]="Cusername" (ngModelChange)="clear()" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" stacked>Password</ion-label>
+          <ion-input type="password" placeholder="Password" [(ngModel)]="Cpassword" (ngModelChange)="clear()" required></ion-input>
+        </ion-item><br>
+      <button ion-button block (click) = "create()">Create Account</button>    
+      <button ion-button block (click) = "register = false" color="danger">Back to Login</button><br><br>
+     
+      <h5 align = "center" style="color:red;" *ngIf="Cuser">Username Already Taken</h5>
+    </div>
+    <h5 align = "center" style="color:red;" *ngIf="fields">Complete all Fields</h5>
+    <h5 align = "center" style="color:green;" *ngIf="success">Account Created!</h5>
+</ion-content>
