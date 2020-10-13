@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { PokemonInfo } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { Login2Page } from '../pages/login2/login2';
+import { Login2PageModule } from '../pages/login2/login2.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -24,14 +25,15 @@ import { IonicStorageModule } from '@ionic/storage';
     ContactPage,
     HomePage,
     TabsPage,
-    Login2Page,
+    //Login2Page,
     PokemonInfo
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    Login2PageModule
 
   ],
   bootstrap: [IonicApp],

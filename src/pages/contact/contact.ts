@@ -34,7 +34,7 @@ export class ContactPage {
     },err => {
       console.log(err);
       console.log(err.detail); 
-      if(err.error.detail === "Not found."){
+      if(err.error === "Not Found"){
         this.loading.dismiss();
         this.PopMg("Not Found",this.pokemonName+" isn't a pokemon name or ID!")
       } else {
